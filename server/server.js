@@ -7,6 +7,10 @@ const bodyParser = require("body-parser");
 dotenv.config();
 
 const app = express();
+app.use(cors({
+  origin: "https://clent-46utuckcq-upparipraveens-projects.vercel.app",
+  credentials: true
+}));
 app.use(cors());
 app.use(bodyParser.json());
 
