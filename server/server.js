@@ -8,10 +8,10 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: "https://clent-46utuckcq-upparipraveens-projects.vercel.app",
+  origin: "https://clent-c7ac0u2m1-upparipraveens-projects.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
-app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB connection
