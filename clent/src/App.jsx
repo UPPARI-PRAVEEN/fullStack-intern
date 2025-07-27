@@ -1,25 +1,25 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
-import Dashboard from './components/Dashboard';
-import { getToken } from './utils';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
+import Hero from './components/Hero'
+import Gallery from './components/Gallery'
+import { HeroSectionWithInsomnia } from './components/HeroSectionWithInsomnia'
+import { IndustryLeadersSection } from './components/IndustryLeadersSection'
+import QaSection from './components/QaSection'
+import Footer from './components/Footer'
+import Carousel from './components/Carousel'
 
 const App = () => {
-  const isLoggedIn = !!getToken();
-  console.log(isLoggedIn,"$$$")
-
-
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LoginForm />} />
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <LoginForm />} />
-      </Routes>
-    </Router>
-  );
-};
+    <>
+      <Hero />
+      <Gallery />
+      <HeroSectionWithInsomnia />
+      <IndustryLeadersSection />
+      <QaSection />
+      <Carousel />
+      
+      <Footer />
+    </>
+  )
+}
 
-export default App;
-
+export default App
