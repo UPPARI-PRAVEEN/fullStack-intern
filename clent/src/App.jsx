@@ -11,13 +11,13 @@ const App = () => {
   return (
     <>
       <Hero />
-      <Gallery />
-      <HeroSectionWithInsomnia />
-      <IndustryLeadersSection />
-      <QaSection />
+      {/* <Gallery /> */}
+      {/* <HeroSectionWithInsomnia /> */}
+      {/* <IndustryLeadersSection /> */}
+      {/* <QaSection /> */}
       <Carousel />
       
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

@@ -68,7 +68,7 @@ const Carousel = () => {
     const interval = setInterval(() => {
       if (containerRef.current) {
         containerRef.current.scrollBy({
-          left: 320,
+          left: 400,
           behavior: "smooth",
         });
       }
@@ -77,7 +77,7 @@ const Carousel = () => {
   }, []);
 
   return (
-   <div className="relative bg-gray-950 text-white py-10 px-15 overflow-hidden">
+   <div className="relative bg-gray-950 text-white pt-1 pb-6 pl-[50px] pr-[5px]  overflow-hidden">
   {/* Vertical dotted lines */}
   {[...Array(5)].map((_, i) => (
     <div
@@ -89,7 +89,17 @@ const Carousel = () => {
 
   {/* Title and description */}
   <div className="text-center mb-10 relative z-10">
-    <h2 className="text-3xl font-bold">Smooth International Sales</h2>
+   <a href="https://react-portfolio-seven-pied.vercel.app/" target="_blank">
+  <h2
+    className="text-6xl font-bold underline cursor-pointer text-white decoration-white"
+    style={{ fontSize: "2.5rem", fontWeight: "700" }}
+  >
+    Smooth International Sales
+  </h2>
+</a>
+
+
+
     <p className="text-sm text-orange-300 mt-2">
       Everything you need to handle payments for your SaaS business
     </p>
@@ -103,12 +113,10 @@ const Carousel = () => {
     {cards.map((card, index) => (
       <div
         key={index}
-        className="min-w-[280px] md:min-w-[320px] h-[500px] bg-cover bg-center rounded-xl shadow-md p-6 flex flex-col justify-end"
+        className="min-w-[380px] md:min-w-[380px] h-[600px] bg-cover bg-center rounded-xl shadow-md p-6 flex flex-col justify-end"
         style={{ backgroundImage: `url(${card.image})` }}
       >
-        {/* Optional text */}
-        {/* <p className="text-sm text-gray-300">{card.title}</p>
-        <h3 className="text-xl font-semibold">{card.subtitle}</h3> */}
+       
       </div>
     ))}
   </div>
