@@ -44,7 +44,8 @@ const cards = [
     title: "iOS",
     subtitle: "Photography just got better.",
     image: pic4,
-  }, {
+  },
+  {
     title: "iOS",
     subtitle: "Photography just got better.",
     image: pic2,
@@ -77,51 +78,52 @@ const Carousel = () => {
   }, []);
 
   return (
-   <div className="relative bg-gray-950 text-white pt-1 pb-6 pl-[50px] pr-[5px]  overflow-hidden">
-  {/* Vertical dotted lines */}
-  {[...Array(5)].map((_, i) => (
+    <div className="relative bg-gray-950 text-white pt-1 pb-6 pl-[50px] pr-[5px]  overflow-hidden">
+      {/* Vertical dotted lines */}
+     <div className="absolute inset-0 z-0 pointer-events-none">
+  {[...Array(6)].map((_, i) => (
     <div
-      key={`vertical-line-${i}`}
+      key={`vertical-line-leaders-${i}`}
       className="absolute top-0 bottom-0 border-l border-dashed border-gray-600"
-      style={{ left: `${20 * (i + 1)}%` }}
+      style={{ left: `${(100 / 7) * (i + 1)}%` }}
     />
   ))}
-
-  {/* Title and description */}
-  <div className="text-center mb-10 relative z-10">
-   <a href="https://react-portfolio-seven-pied.vercel.app/" target="_blank">
-  <h2
-    className="text-6xl font-bold underline cursor-pointer text-white decoration-white"
-    style={{ fontSize: "2.5rem", fontWeight: "700" }}
-  >
-    Smooth International Sales
-  </h2>
-</a>
-
-
-
-    <p className="text-sm text-orange-300 mt-2">
-      Everything you need to handle payments for your SaaS business
-    </p>
-  </div>
-
-  {/* Carousel */}
-  <div
-    ref={containerRef}
-    className="relative z-10 flex gap-6 overflow-x-auto scroll-smooth hide-scrollbar"
-  >
-    {cards.map((card, index) => (
-      <div
-        key={index}
-        className="min-w-[380px] md:min-w-[380px] h-[600px] bg-cover bg-center rounded-xl shadow-md p-6 flex flex-col justify-end"
-        style={{ backgroundImage: `url(${card.image})` }}
-      >
-       
-      </div>
-    ))}
-  </div>
 </div>
 
+
+      {/* Title and description */}
+      <div className="text-center mb-10 relative z-10">
+        <a
+          href="https://react-portfolio-seven-pied.vercel.app/"
+          target="_blank"
+        >
+          <h2
+            className="text-6xl font-bold underline cursor-pointer text-white decoration-white"
+            style={{ fontSize: "2.5rem", fontWeight: "700" }}
+          >
+            Smooth International Sales
+          </h2>
+        </a>
+
+        <p className="text-sm text-orange-300 mt-2">
+          Everything you need to handle payments for your SaaS business
+        </p>
+      </div>
+
+      {/* Carousel */}
+      <div
+        ref={containerRef}
+        className="relative z-10 flex gap-6 overflow-x-auto scroll-smooth hide-scrollbar"
+      >
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="min-w-[380px] md:min-w-[380px] h-[600px] bg-cover bg-center rounded-xl shadow-md p-6 flex flex-col justify-end"
+            style={{ backgroundImage: `url(${card.image})` }}
+          ></div>
+        ))}
+      </div>
+    </div>
   );
 };
 
